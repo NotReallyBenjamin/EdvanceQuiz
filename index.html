@@ -403,8 +403,6 @@
     <div class="result" id="result" aria-live="polite">
       <h2>Your total score</h2>
       <div class="score" id="score">0</div>
-      <p class="muted">Maximum possible score: 120</p>
-      <button type="button" onclick="window.location.reload()">Start again</button>
     </div>
   </main>
 
@@ -413,9 +411,7 @@
       event.preventDefault();
       const form = new FormData(event.target);
       let total = 0;
-      for (const value of form.values()) {
-        total += Number(value);
-      }
+      for (const value of form.values()) total += Number(value);
       document.getElementById("score").textContent = total;
       document.getElementById("result").style.display = "block";
       document.getElementById("result").scrollIntoView({ behavior: "smooth" });
